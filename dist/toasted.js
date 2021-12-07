@@ -496,7 +496,8 @@ var _show = function _show(instance, message, options) {
 	}
 
 	// clone the global options
-	var _options = JSON.parse(JSON.stringify(instance.options));
+	var _options = Object.assign({}, instance.options);
+	_options.className = JSON.parse(JSON.stringify(_options.className));
 
 	// merge the cached global options with options
 	Object.assign(_options, options);
