@@ -209,7 +209,7 @@ export const _show = function (instance, message, options) {
 	}
 
 	// clone the global options
-	let _options = Object.assign({}, instance.options);
+	let _options = JSON.parse(JSON.stringify(instance.options))
 
 	// merge the cached global options with options
 	Object.assign(_options, options);
